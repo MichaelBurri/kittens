@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" href="multimedia/icons/Kittens.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Kittens.com</title>
+</head>
+<body>
+    <div id="mainContainer">
+        <!-- HEADER -->
+        <header id="top">
+            <div class="topWrapper">
+                <div class="headerTop">
+                    <div id="favCon">
+                        <a href=""><img src="multimedia/icons/Kittens.jpg" alt="Kitten Icon" class="kittyIcon"></a>
+                        <a href="">꧁⭑⭒ KITTENS ⭑⭒꧂</a> 
+                    </div>
+                    <div id="loginTop">                        
+                        <a href=""><img src="multimedia/icons/user.jpg" alt=""></a>
+                        <a href=""><img src="multimedia/icons/shopping_cart.svg" alt=""></a>
+                    </div>
+                    
+                   
+                </div>
+                <nav>
+                    <div class="navigationBar">
+                        <ul class="navList">
+                            <a href=""><li>Kittens</li></a>
+                            <a href=""><li>Cattos</li></a>
+                            <a href=""><li>Kitties</li></a>
+                            <a href=""><li>Almost <i> purrfect</i> </li></a>
+                            <a href=""><li>Livestream</li></a>
+                            <a href=""><li>Contact Us</li></a>
+                        </ul>
+                    </div>
+                </nav>
+                
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main id="main">
+            <div id="hero">                 
+                <video autoplay muted loop id="myVideo">
+                    <source src="multimedia/kittens.mp4" type="video/mp4">
+                </video>           
+               
+                <div class="content">
+                    <h1>Kitty Kitty</h1>
+                    <p>Do you like kittens? Obviously you DO! Why else would you be in <b>kittens.com</b>?</p>
+                    <p>By completing this little <b>QUIZ</b> you can get a <b>kitty picture for free!</b></p>
+                    <button id="myBtn" onclick="pausar()"><i>Paws</i></button>
+                </div>                
+            </div>    
+            <div class="formulario"> 
+                <div>
+                    <h2>THE KITTY QUIZ</h2>
+                    <form id="form">
+                        <label>Email</label>
+                        <input type="text">
+                        <label>Name</label>
+                        <input type="text">
+                        <label>Age</label>
+                        <input type="number">
+                        <label>Do you like kittens?</label>
+                        <label><input type="checkbox">Heck yeah, I love kittens</label>                         
+                    </form>
+                </div>
+                <div id="botonKitten">
+                    <button>DOWNLOAD KITTEN</button>
+                </div>
+            </div>
+            
+            
+            <div class="testimonios">
+                <h2>TESTIMONIES</h2>
+                <div class="testimoniosContainer">
+                    
+                </div>                
+            </div>
+            <div class="awards">
+                <h2>OUR AWARDS</h2>
+                <div class="ventajas"> 
+                    <div class="premio">                        
+                        <h4>ICA AWARD OF EXCELLENCE</h4>
+                        <img src="multimedia/images/excellence.jpg" alt="">
+                    </div>
+                    <div class="premio">
+                        <h4>GOLDEN KITTY AWARD 2016</h4>
+                        <img src="multimedia/images/goldenKitty.jpg" alt="">
+                    </div>
+                    <div class="premio">
+                        <h4>THREE LITTLE KITTENS</h4>
+                        <img src="multimedia/images/three.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+
+        <!-- FOOTER -->
+        <footer id="footer"> 
+            <div class="footWrapper">
+                <div>
+                    <h4>Info About Us</h4>
+                    <p>In kittens.com we have been serving the public with kitten pictures since 2005. We are proud of
+                        bringing joy to every user of our service and will try to improve it even further.
+                    </p>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><img src="./multimedia/icons/location_on-24px.svg" alt="icono localizacion"><br>420th, Happiness Street, Joyland </li>
+                        <li><img src="./multimedia/icons/local_phone-24px.svg" alt="icono telefono"><br> 000-54-88-367</li>
+                        <li><img src="./multimedia/icons/email-24px.svg" alt="icono email"><br> realKittens@Kittens.com</li><br>
+                    </ul>
+                </div>
+                <div class="socialMedia">
+                    <h4>Social Media</h4>
+                    <div>
+                        <a href=""><img src="multimedia/icons/facebook.svg" alt="Facebook" class="socialIcon"></a>
+                        <a href=""><img src="multimedia/icons/twitter.svg" alt="Twitter" class="socialIcon"></a>
+                        <a href=""><img src="multimedia/icons/instagram.svg" alt="Instagram" class="socialIcon"></a>
+                        <a href=""><img src="multimedia/icons/google.svg" alt="Google" class="socialIcon"></a>
+                    </div>                    
+                </div>
+                
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
