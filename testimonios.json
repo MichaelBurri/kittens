@@ -1,4 +1,4 @@
-[
+{ "testimonies":[
     {
         "name":"CatLover27",
         "text":"Oh boy do I like cats!",
@@ -79,4 +79,31 @@
         "text":"This is just PURRRFECT",
         "date":"21/01/2021"
     }
+],
+"services":[
+    {
+        "name":"Persian cat",
+        "text":"Long hair, silk touch",
+        "img":"multimedia/images/persian.jpg",
+        "id":"persian"
+    },
+    {
+        "name":"Siamese cat",
+        "text":"Blue eyes to lose yourself in",
+        "img":"multimedia/images/siam.jpg",
+        "id":"siam"
+    },
+    {
+        "name":"Ragdoll cat",
+        "text":"The cutest of kittens",
+        "img":"multimedia/images/ragdoll.jpg",
+        "id":"ragdoll"
+    },
+    {
+        "name":"Granada cat",
+        "text":"Our local feline, enjoying the sun",
+        "img":"multimedia/images/Garnata.png",
+        "id":"garnata"
+    }
 ]
+}

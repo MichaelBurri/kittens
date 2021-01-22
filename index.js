@@ -9,6 +9,36 @@ function pausar() {
     btn.innerHTML = "Play";
   }
 }
+/* SERVICIOS */
+function cargarServicios() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      let respuesta=JSON.parse(this.responseText);
+    if(respuesta!=null){
+      $('.serviciosContainer').html(''); 
+      for (let i = 0; i < 4; i++) {
+        maquetarServicio(respuesta["services"][i]);        
+      }      
+    }    
+    }
+  };
+  xhttp.open("GET", "testimonios.json", true);
+  xhttp.send();
+}
+function maquetarServicio(respuesta) {
+  let name=respuesta.name;
+  let text=respuesta.text;
+  let img=respuesta.img;
+  let id=respuesta.id;
+
+  let contenedor=$('.serviciosContainer');
+  let contenido=$("<div id='"+id+"'><h3>"+name+"</h3><img src='"+img+"' alt='cat Image'><p><i>"+text+"</i></p></div>");
+  
+  contenedor.append(contenido);
+}
+
+/* TESTIMONIOS */
 function cargarTestimonios() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -16,7 +46,7 @@ function cargarTestimonios() {
       let respuesta=JSON.parse(this.responseText);
     if(respuesta!=null){
       $('.testimoniosContainer').html('');      
-      seleccionarTestimonio(respuesta);
+      seleccionarTestimonio(respuesta["testimonies"]);
     }    
     }
   };
@@ -137,13 +167,41 @@ $('#returnTop').click(function() {
       scrollTop : 0                       
   }, 500);
 });
+
 /* CARGAR DOCUMENTO */
 $( document ).ready(function() {
+  var cont=0;
   validateForm();
   cargarTestimonios();
-  setInterval(function(){    
-    $('.testimoniosContainer').fadeOut(20);    
+  cargarServicios();
+  setInterval(function(){ 
+    cont++;
+    if($('.testimoniosContainer').children().length==0){
     cargarTestimonios();
-    $('.testimoniosContainer').fadeIn(900);
+  }    
+    if($('.serviciosContainer').children().length==0){
+      cargarServicios(); 
+    }
+    if(cont%2==0){
+      $('.testimoniosContainer').fadeOut(20);    
+      cargarTestimonios();
+      $('.testimoniosContainer').fadeIn(900);
+    }  
+    
   },5000); 
+});
+
+/* GEOLOCALIZACIÓN...un poco mal la verdad... */
+$.ajax({
+  url: "https://geolocation-db.com/jsonp",
+  jsonpCallback: "callback",
+  dataType: "jsonp",
+  success: function(location) {
+    console.log(location.country_name);
+    console.log(location.state);//no furula
+    console.log(location.city);//no furula
+    console.log(location.latitude);
+    console.log(location.longitude);
+    console.log(location.IPv4);
+  }
 });
