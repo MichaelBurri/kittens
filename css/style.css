@@ -22,7 +22,6 @@ ul{
 }
 /* TOP */
 
-
 .topWrapper{
     height: 100%;
     display: flex;
@@ -60,13 +59,16 @@ header{
     background-color: rgba(184, 214, 180, 0.411);
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
 }
 .navList{
     list-style: none;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin-left: -40px;
 }
 .navList li{
     padding: 20px;
@@ -247,6 +249,16 @@ header{
     font-size: larger;
     max-width: 80%;
 }
+#tablaTestimonio{
+    display: none;
+    width: 80%;
+    height: 80%;
+    
+}
+#tablaTestimonio,#tablaTestimonio tr,#tablaTestimonio th, #tablaTestimonio td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
 .awards{
     border-top: dimgrey 2px dashed;
     display: flex;
@@ -338,4 +350,21 @@ header{
 #returnTop:hover i {
     color: #fff;
     top: 5px;
+}
+
+
+@media screen and (min-width:768px){
+    .navigationBar{
+    background-color: rgba(184, 214, 180, 0.411);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+    .navList{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: auto;
+    }
 }

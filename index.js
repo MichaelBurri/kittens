@@ -70,19 +70,42 @@ function maquetarTestimonio(respuesta){
 }
 function seleccionarTestimonio(respuesta){
   let len=respuesta.length;
-  let array=[];
-  
+  let array=[];  
+    $("#tablaTestimonio tr:eq(1)").remove();
+    $("#tablaTestimonio tr:eq(1)").remove();
+    $("#tablaTestimonio tr:eq(1)").remove();
   for (let i = 0; i < 3; i++) {
     let num;
     do {
       num=Math.floor(Math.random()*(len));      
     } while (array.includes(num));
     array.push(num);
-    maquetarTestimonio(respuesta[num]);
+    maquetarTestimonio(respuesta[num]);     
+    
+    maquetarTabla(respuesta[num]);
     
   }
 }
+function maquetarTabla(respuesta){
+  let name=respuesta.name;
+  let text=respuesta.text;
+  let date=respuesta.date;
+  let contenedor=$('#tablaTestimonio');
+  let table=$("<tr><td>"+name+"</td><td>"+text+"</td><td>"+date+"</td></tr>")
+  contenedor.append(table);
+}
 /* EVENTOS */
+$("#cambiarVista").click(function(e){
+  if($('#tablaTestimonio').is(":hidden")){
+    $('#tablaTestimonio').show();
+    $('.testimoniosContainer').hide();
+  }
+  else{
+    $('#tablaTestimonio').hide();
+    $('.testimoniosContainer').show();
+  }
+  ;
+});
 $( ".premio" ).mouseenter(function(e) {
   $(this).animate({
     opacity: '0.5',
