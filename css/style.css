@@ -139,6 +139,7 @@ header{
 
 
 .formulario{    
+    color:  rgb(112, 139, 36);
     justify-self: center;
     display: flex;
     flex-direction: column;
@@ -153,7 +154,7 @@ header{
 #botonKitten{
     padding: 20px;
 }
-#botonKitten > button{
+#botonKitten > input{
     padding: 10px;
 }
 #form{
@@ -163,8 +164,18 @@ header{
     align-items: flex-start;
     padding: 20PX;
 }
-#form>*{
+#form img{
+    width: 20px;
     padding: 3px;
+}
+#form>div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#form>*{
+    padding: 5px;
 }
 .testimonios{
     border-top: dimgrey 2px dashed;
@@ -253,4 +264,46 @@ header{
 .socialIcon{
     width: 25px;
     padding: 10px;
+}
+
+/* BOTON RETURN TOP */
+#returnTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#returnTop i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#returnTop:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#returnTop:hover i {
+    color: #fff;
+    top: 5px;
 }

@@ -52,6 +52,7 @@ function seleccionarTestimonio(respuesta){
     
   }
 }
+/* EVENTOS */
 $( ".premio" ).mouseenter(function(e) {
   $(this).animate({
     opacity: '0.5',
@@ -68,7 +69,77 @@ $( ".premio" ).mouseleave(function(e) {
   });
 });
 
+/* VALIDACION FORMULARIO */
+
+function validateForm() {
+  $("#email").keyup(function () {
+    var VAL = this.value;
+    var email = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$');
+    if (email.test(VAL)) {
+        $( "#nombre" ).prop('disabled', false);
+        $( "#imgEmail" ).prop('src','multimedia/icons/check.svg');
+    }
+    else{
+      $( "#nombre" ).prop('disabled', true);
+      $( "#imgEmail" ).prop('src','multimedia/icons//x-mark.svg');
+    }
+  });
+  
+  $( "#nombre" ).keyup(function () {
+    var VAL = this.value;
+    var nombre = new RegExp('^[a-zA-Z0-9._%+-]{3}');
+    if (nombre.test(VAL)) {
+        $( "#edad" ).prop('disabled', false);
+        $( "#imgNombre" ).prop('src','multimedia/icons/check.svg');
+    }
+    else{
+      $( "#edad" ).prop('disabled', true);
+      $( "#imgNombre" ).prop('src','multimedia/icons//x-mark.svg');
+    }
+  });
+  
+  $( "#edad" ).keyup(function () {
+    var VAL = this.value;
+    var edad = new RegExp('^(0?[1-9]|[1-9][0-9]|[1][1-9][1-9]|200)$');  
+    if (edad.test(VAL)) {
+        $( "#cbKitty" ).prop('disabled', false);
+        $( "#imgAge" ).prop('src','multimedia/icons/check.svg');
+    }
+    else{
+      $( "#cbKitty" ).prop('disabled', true);
+      $( "#imgAge" ).prop('src','multimedia/icons//x-mark.svg');
+    }
+  });
+  
+  $("#cbKitty").click( function(){
+    if( $(this).is(':checked') ) {
+      $("#submitKitten").prop('disabled', false);
+      $( "#imgCB" ).prop('src','multimedia/icons/check.svg');      
+    }      
+    else{
+      $("#submitKitten").prop('disabled', true);
+      $( "#imgCB" ).prop('src','multimedia/icons//x-mark.svg');
+    }
+  });
+  
+}
+
+/*  SCROLL TO TOP  */
+$(window).scroll(function() {
+  if ($(this).scrollTop() >= 50) {      
+      $('#returnTop').fadeIn(200);   
+  } else {
+      $('#returnTop').fadeOut(200);  
+  }
+});
+$('#returnTop').click(function() {      
+  $('body,html').animate({
+      scrollTop : 0                       
+  }, 500);
+});
+/* CARGAR DOCUMENTO */
 $( document ).ready(function() {
+  validateForm();
   cargarTestimonios();
   setInterval(function(){    
     $('.testimoniosContainer').fadeOut(20);    

@@ -6,10 +6,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="icon" href="multimedia/icons/Kittens.jpg">
     <link rel="stylesheet" href="css/style.css">
-    
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <title>Kittens.com</title>
 </head>
 <body>
+    <a href="javascript:" id="returnTop"><i class="icon-chevron-up"></i></a>
     <div id="mainContainer">
         <!-- HEADER -->
         <header id="top">
@@ -60,18 +61,18 @@
                 <div>
                     <h2>THE KITTY QUIZ</h2>
                     <form id="form">
-                        <label>Email</label>
-                        <input type="text">
+                        <label>Email </label>
+                        <div><input id="email" type="email" required><img id='imgEmail' src="" alt=""></div>
                         <label>Name</label>
-                        <input type="text">
+                        <div><input id="nombre" type="text" required disabled><img id='imgNombre' src="" alt=""></div>
                         <label>Age</label>
-                        <input type="number">
-                        <label>Do you like kittens?</label>
-                        <label><input type="checkbox">Heck yeah, I love kittens</label>                         
+                        <div><input id="edad" type="text" required disabled><img id='imgAge' src="" alt=""></div>
+                        <label>Do you like <b>kittens</b>? </label>
+                        <div><label><input id="cbKitty" type="checkbox" disabled>Heck yeah, I <b>love</b> kittens</label><img id='imgCB' src="" alt=""></div>                         
                     </form>
                 </div>
                 <div id="botonKitten">
-                    <button>DOWNLOAD KITTEN</button>
+                    <input id="submitKitten"type="submit" value="SUBMIT" disabled>                    
                 </div>
             </div>
             
